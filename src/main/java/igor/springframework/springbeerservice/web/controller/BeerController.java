@@ -3,6 +3,7 @@ package igor.springframework.springbeerservice.web.controller;
 import igor.springframework.springbeerservice.web.model.BeerDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -19,13 +20,13 @@ public class BeerController {
     }
 
     @PostMapping
-    public ResponseEntity saveNewBeer(@Valid @RequestBody BeerDTO beerDTO){
+    public ResponseEntity saveNewBeer(@Validated @RequestBody BeerDTO beerDTO){
         //todo impl
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
     @PutMapping("/{beerId}")
-    public ResponseEntity updateBeerById(@PathVariable UUID id,@Valid @RequestBody BeerDTO beerDTO){
+    public ResponseEntity updateBeerById(@PathVariable("beerId") UUID id,@Validated @RequestBody BeerDTO beerDTO){
         //todo impl
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
