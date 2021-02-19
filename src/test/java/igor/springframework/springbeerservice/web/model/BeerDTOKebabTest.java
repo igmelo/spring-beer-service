@@ -5,15 +5,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;
-import org.springframework.context.annotation.Profile;
 import org.springframework.test.context.ActiveProfiles;
 
-@ActiveProfiles("snake")
+@ActiveProfiles("kebab")
 @JsonTest
-public class BeerDTOSnakeTest extends BaseTest{
+public class BeerDTOKebabTest extends BaseTest{
 
     @Test
-    void testSnake() throws JsonProcessingException {
+    void testKebab() throws JsonProcessingException {
         BeerDTO dto = getDTO();
 
         String json = objectMapper.writeValueAsString(dto);
