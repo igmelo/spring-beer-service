@@ -31,7 +31,7 @@ public class BeerPagedList extends PageImpl<BeerDTO> {
         super(content, pageable, total);
     }
 
-    public BeerPagedList(List<BeerDto> content) {
+    public BeerPagedList(List<BeerDTO> content) {
         super(content);
     }
 }
