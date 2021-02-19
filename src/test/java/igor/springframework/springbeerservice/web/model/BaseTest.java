@@ -1,6 +1,7 @@
 package igor.springframework.springbeerservice.web.model;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import igor.springframework.springbeerservice.bootstrap.BeerLoader;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
@@ -19,7 +20,7 @@ public class BaseTest {
                 .id(UUID.randomUUID())
                 .createdDate(OffsetDateTime.now())
                 .lastModifiedData(OffsetDateTime.now())
-                .upc(337010000001L)
+                .upc(BeerLoader.BEER_1_UPC)
                 .price(new BigDecimal("12.95"))
                 .build();
     }
