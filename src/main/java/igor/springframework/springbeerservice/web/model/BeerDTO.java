@@ -1,5 +1,6 @@
 package igor.springframework.springbeerservice.web.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,6 +20,8 @@ import java.util.UUID;
 @Builder
 public class BeerDTO {
 
+    @JsonProperty("beerId") // this change the JSON file property variable name
+    //this must be used where you're not explicitly setting the JsonProperty name
     @Null
     private UUID id;
 
