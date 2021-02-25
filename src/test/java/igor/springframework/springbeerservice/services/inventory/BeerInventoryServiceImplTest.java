@@ -17,5 +17,11 @@ public class BeerInventoryServiceImplTest {
 
     }
 
+    @Test
+    void getOnHandInventory(){
+        //todo evolve to use upc
+
+    }
+
 
 }
