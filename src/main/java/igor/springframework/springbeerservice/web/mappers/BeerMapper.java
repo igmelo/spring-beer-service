@@ -1,7 +1,6 @@
 package igor.springframework.springbeerservice.web.mappers;
 
 import igor.springframework.springbeerservice.web.domain.Beer;
-
 import igor.springframework.springbeerservice.web.model.BeerDTO;
 import org.mapstruct.DecoratedWith;
 import org.mapstruct.Mapper;
