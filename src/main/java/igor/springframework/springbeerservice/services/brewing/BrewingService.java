@@ -1,4 +1,4 @@
-package igor.springframework.springbeerservice.services;
+package igor.springframework.springbeerservice.services.brewing;
 
 import igor.springframework.springbeerservice.config.JmsConfig;
 import igor.springframework.springbeerservice.events.BrewBeerEvent;
