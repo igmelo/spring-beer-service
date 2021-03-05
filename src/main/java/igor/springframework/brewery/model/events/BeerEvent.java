@@ -1,6 +1,6 @@
-package igor.springframework.springbeerservice.events;
+package igor.springframework.brewery.model.events;
 
-import igor.springframework.springbeerservice.web.model.BeerDTO;
+import igor.springframework.brewery.model.BeerDTO;
 import lombok.*;
 
 import java.io.Serializable;

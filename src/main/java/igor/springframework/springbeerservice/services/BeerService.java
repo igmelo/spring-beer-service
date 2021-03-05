@@ -1,9 +1,8 @@
 package igor.springframework.springbeerservice.services;
 
-import igor.springframework.springbeerservice.web.domain.Beer;
-import igor.springframework.springbeerservice.web.model.BeerDTO;
-import igor.springframework.springbeerservice.web.model.BeerPagedList;
-import igor.springframework.springbeerservice.web.model.BeerStyleEnum;
+import igor.springframework.brewery.model.BeerDTO;
+import igor.springframework.brewery.model.BeerPagedList;
+import igor.springframework.brewery.model.BeerStyleEnum;
 import org.springframework.data.domain.PageRequest;
 
 import java.util.UUID;

@@ -1,11 +1,11 @@
 package igor.springframework.springbeerservice.services.brewing;
 
 import igor.springframework.springbeerservice.config.JmsConfig;
-import igor.springframework.springbeerservice.events.BrewBeerEvent;
-import igor.springframework.springbeerservice.events.NewInventoryEvent;
+import igor.springframework.brewery.model.events.BrewBeerEvent;
+import igor.springframework.brewery.model.events.NewInventoryEvent;
 import igor.springframework.springbeerservice.repositories.BeerRepository;
 import igor.springframework.springbeerservice.web.domain.Beer;
-import igor.springframework.springbeerservice.web.model.BeerDTO;
+import igor.springframework.brewery.model.BeerDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.annotation.JmsListener;

@@ -1,9 +1,9 @@
 package igor.springframework.springbeerservice.web.controller;
 
 import igor.springframework.springbeerservice.services.BeerService;
-import igor.springframework.springbeerservice.web.model.BeerDTO;
-import igor.springframework.springbeerservice.web.model.BeerPagedList;
-import igor.springframework.springbeerservice.web.model.BeerStyleEnum;
+import igor.springframework.brewery.model.BeerDTO;
+import igor.springframework.brewery.model.BeerPagedList;
+import igor.springframework.brewery.model.BeerStyleEnum;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;

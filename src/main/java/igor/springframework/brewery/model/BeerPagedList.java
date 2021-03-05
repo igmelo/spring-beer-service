@@ -1,4 +1,4 @@
-package igor.springframework.springbeerservice.web.model;
+package igor.springframework.brewery.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

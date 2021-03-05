@@ -1,4 +1,4 @@
-package igor.springframework.springbeerservice.web.model;
+package igor.springframework.brewery.model;
 
 public enum BeerStyleEnum {
 

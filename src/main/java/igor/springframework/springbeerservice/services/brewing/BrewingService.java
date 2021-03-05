@@ -1,7 +1,7 @@
 package igor.springframework.springbeerservice.services.brewing;
 
 import igor.springframework.springbeerservice.config.JmsConfig;
-import igor.springframework.springbeerservice.events.BrewBeerEvent;
+import igor.springframework.brewery.model.events.BrewBeerEvent;
 import igor.springframework.springbeerservice.repositories.BeerRepository;
 import igor.springframework.springbeerservice.services.inventory.BeerInventoryService;
 import igor.springframework.springbeerservice.web.domain.Beer;

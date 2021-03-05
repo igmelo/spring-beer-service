@@ -1,6 +1,8 @@
 package igor.springframework.springbeerservice.web.model;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import igor.springframework.brewery.model.BeerDTO;
+import igor.springframework.brewery.model.BeerStyleEnum;
 import igor.springframework.springbeerservice.bootstrap.BeerLoader;
 import org.springframework.beans.factory.annotation.Autowired;
 
