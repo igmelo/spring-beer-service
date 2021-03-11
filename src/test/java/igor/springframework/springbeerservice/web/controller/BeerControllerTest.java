@@ -1,9 +1,9 @@
 package igor.springframework.springbeerservice.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import igor.springframework.brewery.model.BeerDto;
 import igor.springframework.springbeerservice.bootstrap.BeerLoader;
 import igor.springframework.springbeerservice.services.BeerService;
-import igor.springframework.brewery.model.BeerDTO;
 import igor.springframework.brewery.model.BeerStyleEnum;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +48,7 @@ class BeerControllerTest {
 
         given(beerService.saveNewBeer(any())).willReturn(getValidBeerDTO());
 
-        BeerDTO beerDto = getValidBeerDTO();
+        BeerDto beerDto = getValidBeerDTO();
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
 
         mockMvc.perform(post("/api/v1/beer/")
@@ -62,7 +62,7 @@ class BeerControllerTest {
     void updateBeerById() throws Exception {
         given(beerService.updateBeer(any(), any())).willReturn(getValidBeerDTO());
 
-        BeerDTO beerDto = getValidBeerDTO();
+        BeerDto beerDto = getValidBeerDTO();
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
 
         mockMvc.perform(put("/api/v1/beer/" + UUID.randomUUID().toString())
@@ -71,8 +71,8 @@ class BeerControllerTest {
                 .andExpect(status().isNoContent());
     }
     
-    BeerDTO getValidBeerDTO(){
-        return BeerDTO.builder()
+    BeerDto getValidBeerDTO(){
+        return BeerDto.builder()
                 .beerName("My Beer")
                 .beerStyle(BeerStyleEnum.ALE)
                 .price(new BigDecimal("2.99"))

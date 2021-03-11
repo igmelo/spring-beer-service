@@ -1,7 +1,7 @@
 package igor.springframework.springbeerservice.web.mappers;
 
-import igor.springframework.springbeerservice.web.domain.Beer;
-import igor.springframework.brewery.model.BeerDTO;
+import igor.springframework.brewery.model.BeerDto;
+import igor.springframework.springbeerservice.domain.Beer;
 import org.mapstruct.DecoratedWith;
 import org.mapstruct.Mapper;
 
@@ -9,9 +9,9 @@ import org.mapstruct.Mapper;
 @DecoratedWith(BeerMapperDecorator.class)
 public interface BeerMapper {
 
-    BeerDTO beerToBeerDto(Beer beer);
+    BeerDto beerToBeerDto(Beer beer);
 
-    BeerDTO beerToBeerDtoWithInventory(Beer beer);
+    BeerDto beerToBeerDtoWithInventory(Beer beer);
 
-    Beer beerDtoToBeer(BeerDTO dto);
+    Beer beerDtoToBeer(BeerDto dto);
 }

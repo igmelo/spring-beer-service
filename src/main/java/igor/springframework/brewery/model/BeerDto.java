@@ -16,12 +16,12 @@ import java.time.OffsetDateTime;
 import java.util.UUID;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class BeerDTO implements Serializable {
+public class BeerDto implements Serializable  {
 
-    static final long serialVersionUID = -2859908998529575802L;
+    static final long serialVersionUID = -5815566940065181210L;
 
     @Null
     private UUID id;

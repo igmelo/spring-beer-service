@@ -1,7 +1,7 @@
 package igor.springframework.springbeerservice.web.model;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import igor.springframework.brewery.model.BeerDTO;
+import igor.springframework.brewery.model.BeerDto;
 import igor.springframework.brewery.model.BeerStyleEnum;
 import igor.springframework.springbeerservice.bootstrap.BeerLoader;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +15,8 @@ public class BaseTest {
     @Autowired
     ObjectMapper objectMapper;
 
-    BeerDTO getDTO(){
-        return BeerDTO.builder()
+    BeerDto getDTO(){
+        return BeerDto.builder()
                 .beerName("Mongo Bobs")
                 .beerStyle(BeerStyleEnum.PALE_ALE)
                 .id(UUID.randomUUID())

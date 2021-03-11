@@ -12,6 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @RequiredArgsConstructor
 @Component
 public class BeerOrderValidator {
+
     private final BeerRepository beerRepository;
 
     public Boolean validateOrder(BeerOrderDto beerOrder){
@@ -26,4 +27,5 @@ public class BeerOrderValidator {
 
         return beersNotFound.get() == 0;
     }
+
 }

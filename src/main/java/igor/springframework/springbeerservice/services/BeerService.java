@@ -1,6 +1,6 @@
 package igor.springframework.springbeerservice.services;
 
-import igor.springframework.brewery.model.BeerDTO;
+import igor.springframework.brewery.model.BeerDto;
 import igor.springframework.brewery.model.BeerPagedList;
 import igor.springframework.brewery.model.BeerStyleEnum;
 import org.springframework.data.domain.PageRequest;
@@ -11,11 +11,11 @@ public interface BeerService {
 
     BeerPagedList listBeers(String beerName, BeerStyleEnum beerStyle, PageRequest pageRequest, Boolean showInventoryOnHand);
 
-    BeerDTO getById(UUID beerId, Boolean showInventoryOnHand);
+    BeerDto getById(UUID beerId, Boolean showInventoryOnHand);
 
-    BeerDTO saveNewBeer(BeerDTO beerDto);
+    BeerDto saveNewBeer(BeerDto beerDto);
 
-    BeerDTO updateBeer(UUID beerId, BeerDTO beerDto);
+    BeerDto updateBeer(UUID beerId, BeerDto beerDto);
 
-    BeerDTO getByUpc(String upc);
+    BeerDto getByUpc(String upc);
 }

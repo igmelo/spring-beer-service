@@ -1,7 +1,7 @@
 package igor.springframework.springbeerservice.web.controller;
 
+import igor.springframework.brewery.model.BeerDto;
 import igor.springframework.springbeerservice.services.BeerService;
-import igor.springframework.brewery.model.BeerDTO;
 import igor.springframework.brewery.model.BeerPagedList;
 import igor.springframework.brewery.model.BeerStyleEnum;
 import lombok.RequiredArgsConstructor;
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
-@RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/v1/")
-@RequiredArgsConstructor //also automatically autowire
+@RestController
 public class BeerController {
 
     private static final Integer DEFAULT_PAGE_NUMBER = 0;
@@ -48,7 +48,7 @@ public class BeerController {
     }
 
     @GetMapping("beer/{beerId}")
-    public ResponseEntity<BeerDTO> getBeerById(@PathVariable("beerId") UUID beerId,
+    public ResponseEntity<BeerDto> getBeerById(@PathVariable("beerId") UUID beerId,
                                                @RequestParam(value = "showInventoryOnHand", required = false) Boolean showInventoryOnHand){
         if (showInventoryOnHand == null) {
             showInventoryOnHand = false;
@@ -57,20 +57,19 @@ public class BeerController {
         return new ResponseEntity<>(beerService.getById(beerId, showInventoryOnHand), HttpStatus.OK);
     }
 
+    @GetMapping("beerUpc/{upc}")
+    public ResponseEntity<BeerDto> getBeerByUpc(@PathVariable("upc") String upc){
+        return new ResponseEntity<>(beerService.getByUpc(upc), HttpStatus.OK);
+    }
 
     @PostMapping(path = "beer")
-    public ResponseEntity saveNewBeer(@RequestBody @Validated BeerDTO beerDto){
+    public ResponseEntity saveNewBeer(@RequestBody @Validated BeerDto beerDto){
         return new ResponseEntity<>(beerService.saveNewBeer(beerDto), HttpStatus.CREATED);
     }
 
     @PutMapping("beer/{beerId}")
-    public ResponseEntity updateBeerById(@PathVariable("beerId") UUID beerId, @RequestBody @Validated BeerDTO beerDto){
+    public ResponseEntity updateBeerById(@PathVariable("beerId") UUID beerId, @RequestBody @Validated BeerDto beerDto){
         return new ResponseEntity<>(beerService.updateBeer(beerId, beerDto), HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping("beerUpc/{upc}")
-    public ResponseEntity<BeerDTO> getByUpc(@PathVariable("upc") String upc){
-
-        return new ResponseEntity<>(beerService.getByUpc(upc), HttpStatus.OK);
-    }
 }

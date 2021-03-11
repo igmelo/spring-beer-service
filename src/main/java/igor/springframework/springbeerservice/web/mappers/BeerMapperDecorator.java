@@ -1,11 +1,11 @@
 package igor.springframework.springbeerservice.web.mappers;
 
 import igor.springframework.springbeerservice.services.inventory.BeerInventoryService;
-import igor.springframework.springbeerservice.web.domain.Beer;
-import igor.springframework.brewery.model.BeerDTO;
+import igor.springframework.springbeerservice.domain.Beer;
+import igor.springframework.brewery.model.BeerDto;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public abstract class BeerMapperDecorator implements BeerMapper{
+public abstract class BeerMapperDecorator implements BeerMapper {
     private BeerInventoryService beerInventoryService;
     private BeerMapper mapper;
 
@@ -20,19 +20,19 @@ public abstract class BeerMapperDecorator implements BeerMapper{
     }
 
     @Override
-    public BeerDTO beerToBeerDto(Beer beer) {
+    public BeerDto beerToBeerDto(Beer beer) {
         return mapper.beerToBeerDto(beer);
     }
 
     @Override
-    public BeerDTO beerToBeerDtoWithInventory(Beer beer) {
-        BeerDTO dto = mapper.beerToBeerDto(beer);
+    public BeerDto beerToBeerDtoWithInventory(Beer beer) {
+        BeerDto dto = mapper.beerToBeerDto(beer);
         dto.setQuantityOnHand(beerInventoryService.getOnhandInventory(beer.getId()));
         return dto;
     }
 
     @Override
-    public Beer beerDtoToBeer(BeerDTO beerDto) {
+    public Beer beerDtoToBeer(BeerDto beerDto) {
         return mapper.beerDtoToBeer(beerDto);
     }
 }

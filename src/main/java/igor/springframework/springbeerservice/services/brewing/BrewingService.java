@@ -4,7 +4,7 @@ import igor.springframework.springbeerservice.config.JmsConfig;
 import igor.springframework.brewery.model.events.BrewBeerEvent;
 import igor.springframework.springbeerservice.repositories.BeerRepository;
 import igor.springframework.springbeerservice.services.inventory.BeerInventoryService;
-import igor.springframework.springbeerservice.web.domain.Beer;
+import igor.springframework.springbeerservice.domain.Beer;
 import igor.springframework.springbeerservice.web.mappers.BeerMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -29,13 +29,14 @@ public class BrewingService {
 
         beers.forEach(beer -> {
             Integer invQOH = beerInventoryService.getOnhandInventory(beer.getId());
-
+            log.debug("Checking Inventory for: " + beer.getBeerName() + " / " + beer.getId());
             log.debug("Min Onhand is: " + beer.getMinOnHand());
-            log.debug("Inventory is: " + invQOH);
+            log.debug("Inventory is: "  + invQOH);
 
             if(beer.getMinOnHand() >= invQOH){
-                    jmsTemplate.convertAndSend(JmsConfig.BREWING_REQUEST_QUEUE, new BrewBeerEvent(beerMapper.beerToBeerDto(beer)));
+                jmsTemplate.convertAndSend(JmsConfig.BREWING_REQUEST_QUEUE, new BrewBeerEvent(beerMapper.beerToBeerDto(beer)));
             }
         });
+
     }
 }

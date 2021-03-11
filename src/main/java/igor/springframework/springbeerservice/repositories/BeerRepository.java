@@ -1,6 +1,6 @@
 package igor.springframework.springbeerservice.repositories;
 
-import igor.springframework.springbeerservice.web.domain.Beer;
+import igor.springframework.springbeerservice.domain.Beer;
 import igor.springframework.brewery.model.BeerStyleEnum;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

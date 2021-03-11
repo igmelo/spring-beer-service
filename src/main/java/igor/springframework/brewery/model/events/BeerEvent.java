@@ -1,17 +1,17 @@
 package igor.springframework.brewery.model.events;
 
-import igor.springframework.brewery.model.BeerDTO;
+import igor.springframework.brewery.model.BeerDto;
 import lombok.*;
 
 import java.io.Serializable;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor 
+@AllArgsConstructor
 @Builder
+@NoArgsConstructor
 public class BeerEvent implements Serializable {
-    static final long serialVersionUID = -2859908998529575802L;
 
-    private BeerDTO beerDTO;
+    static final long serialVersionUID = -5781515597148163111L;
 
+    private BeerDto beerDto;
 }

@@ -1,4 +1,4 @@
-package igor.springframework.springbeerservice.web.domain;
+package igor.springframework.springbeerservice.domain;
 
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -46,4 +46,6 @@ public class Beer {
 
     private Integer minOnHand;
     private Integer quantityToBrew;
+
+
 }
